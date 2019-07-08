@@ -22,6 +22,7 @@ typedef void (^ZWIntroductionSelectedEnter)();
 @property (nonatomic, copy) ZWIntroductionSelectedEnter didSelectedEnter;
 
 @property (nonatomic, strong) UIView *coverView; // default is nil
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 @property (nonatomic, assign) CGPoint pageControlOffset; // default is {0,-30}
 

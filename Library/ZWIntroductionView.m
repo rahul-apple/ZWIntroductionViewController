@@ -179,6 +179,10 @@
     [[[[self backgroundImageNames] reverseObjectEnumerator] allObjects] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:obj]];
         imageView.frame = frame;
+        [imageView setContentMode:UIViewContentModeScaleAspectFit];
+        if (self.backgroundColor != nil) {
+            [imageView setBackgroundColor:self.backgroundColor];
+        }
         imageView.tag = idx + 1;
         [tmpArray addObject:imageView];
         [self addSubview:imageView];
@@ -377,6 +381,10 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:name]];
     CGSize size = self.frame.size;
     imageView.frame = CGRectMake(self.bounds.origin.x, self.bounds.origin.y, size.width, size.height);
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    if (self.backgroundColor != nil) {
+        [imageView setBackgroundColor:self.backgroundColor];
+    }
     return imageView;
 }
 
